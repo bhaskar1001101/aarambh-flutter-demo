@@ -31,66 +31,66 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: 
-        Column(
-          children: <Widget>[
-            Expanded(
-              child: Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 50, 30, 0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          const Text(
-                            'Player X',
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(30, 60, 30, 0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        const Text(
+                          'Player X',
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                        Text(
+                          xScore.toString(),
+                          style: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(30, 60, 30, 0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        const Text('Player O',
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          Text(
-                            xScore.toString(),
-                            style: const TextStyle(
-                                fontSize: 20, 
-                                color: Colors.white,
-
-                                ),
-                          ),
-                        ],
-                      ),
+                                color: Colors.white)),
+                        Text(
+                          oScore.toString(),
+                          style: const TextStyle(
+                              fontSize: 20, color: Colors.white),
+                        ),
+                      ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 50, 30, 0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          const Text('Player O',
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white)),
-                          Text(
-                            oScore.toString(),
-                            style: const TextStyle(
-                                fontSize: 20, color: Colors.white),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-            Container(
-              height: 60
-            ),
-            Expanded(
-              flex: 4,
+          ),
+          SizedBox(
+            height: 90,
+          ),
+          Expanded(
+            flex: 4,
+            child: Padding(
+              padding: const EdgeInsets.all(32.0),
               child: GridView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                  physics: NeverScrollableScrollPhysics(),
                   itemCount: 9,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3),
@@ -106,35 +106,34 @@ class _HomePageState extends State<HomePage> {
                           child: Text(
                             displayElement[index],
                             style: const TextStyle(
-                                color: Colors.white, fontSize: 35),
+                                color: Colors.white, fontSize: 65),
                           ),
                         ),
                       ),
                     );
                   }),
             ),
-            Expanded(
-                child: Container(
+          ),
+          Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   ElevatedButton(
                     style: const ButtonStyle(
                       backgroundColor:
-                          MaterialStatePropertyAll<Color>(Colors.black),
+                          MaterialStatePropertyAll<Color>(Colors.white),
                     ),
                     onPressed: _clearScoreBoard,
                     child: const Text(
                       "Clear Score Board",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.black),
                     ),
                   ),
                 ],
-              ),
-            ))
-          ],
-        ),
-      );
+              ))
+        ],
+      ),
+    );
   }
 
   void _tapped(int index) {

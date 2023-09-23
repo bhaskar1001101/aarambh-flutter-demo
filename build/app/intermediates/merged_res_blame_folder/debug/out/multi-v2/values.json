@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/bhaskar/dev/flutter/tictactoe/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/bhaskar/dev/flutter/aarambh-flutter-demo/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
